@@ -19,6 +19,12 @@ const Home = () => {
       <Link style={[styles.link, textColorStyle]} href="/contact">
         Contact Page
       </Link>
+      <Link style={[styles.link, textColorStyle]} href="/login">
+        Login Page
+      </Link>
+      <Link style={[styles.link, textColorStyle]} href="/register">
+        Register Page
+      </Link>
     </ThemedView>
   );
 };
