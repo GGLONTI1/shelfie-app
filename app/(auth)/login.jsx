@@ -19,7 +19,7 @@ const Login = () => {
       />
       <Spacer height={100} />
       <Link href={"/register"}>
-        <ThemedText>Register Noww</ThemedText>
+        <ThemedText>Register Now</ThemedText>
       </Link>
     </ThemedView>
   );

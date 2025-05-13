@@ -25,6 +25,12 @@ const Home = () => {
       <Link style={[styles.link, textColorStyle]} href="/register">
         Register Page
       </Link>
+      <Link style={[styles.link, textColorStyle]} href="/create">
+        Create Page
+      </Link>
+      <Link style={[styles.link, textColorStyle]} href="/profile">
+        Profile Page
+      </Link>
     </ThemedView>
   );
 };
