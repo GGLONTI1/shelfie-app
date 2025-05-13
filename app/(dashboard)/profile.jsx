@@ -12,7 +12,7 @@ const Profile = () => {
         Your Email
       </ThemedText>
       <Spacer height={20} />
-      <ThemedText style={styles.heading} title={true}>
+      <ThemedText style={styles.heading}>
         time to start reading books...
       </ThemedText>
     </ThemedView>
