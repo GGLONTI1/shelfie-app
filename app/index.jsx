@@ -10,9 +10,8 @@ const Home = () => {
   return (
     <ThemedView style={styles.container}>
       <Image source={Logo} />
-      <Text style={[styles.title, textColorStyle]}>The Number 1</Text>
+      <Text style={[styles.title, textColorStyle]}>Reading List App</Text>
       <Spacer height={10} />
-      <Text style={textColorStyle}>Reading List App</Text>
       <Link style={[styles.link, textColorStyle]} href="/about">
         About Page
       </Link>

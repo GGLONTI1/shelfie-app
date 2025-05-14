@@ -1,18 +1,23 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { useState } from "react";
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import Spacer from "../../components/Spacer";
 import { Link } from "expo-router";
-import { Colors } from "../../constants/Colors";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  function onSubmit() {
-    console.log("User Info:", email);
+  const [password, setPassword] = useState("");
+  const { user } = useUser();
+
+  function handleSubmit() {
+    console.log("current user", user);
+    console.log("Login Info submitted!", email, password);
   }
+
   return (
     <ThemedView style={styles.container}>
       <ThemedText title={true}>Login to Your Account</ThemedText>
@@ -22,9 +27,15 @@ const Login = () => {
         onChangeText={setEmail}
         keyboardType="email-address"
       />
-
+      <ThemedTextInput
+        placeholder="Password"
+        style={{ width: "80%", marginBottom: 20 }}
+        onChangeText={setPassword}
+        value={password}
+        secureTextEntry
+      />
       <ThemedButton
-        onPress={onSubmit}
+        onPress={handleSubmit}
         style={{ width: 300 }}
         btnText="Login"
         textStyles={{ fontWeight: "light" }}
