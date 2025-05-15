@@ -11,12 +11,16 @@ import { useUser } from "../../hooks/useUser";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useUser();
+  const { user, login } = useUser();
 
-  function handleSubmit() {
-    console.log("current user", user);
-    console.log("Login Info submitted!", email, password);
-  }
+  const handleSubmit = async () => {
+    try {
+      await login(email, password);
+      console.log("current user is: ", user);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
   return (
     <ThemedView style={styles.container}>

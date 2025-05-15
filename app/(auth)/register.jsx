@@ -6,13 +6,20 @@ import Spacer from "../../components/Spacer";
 import { Link } from "expo-router";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
+import { useUser } from "../../hooks/useUser";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { user, register } = useUser();
 
   const handleSubmit = async () => {
-    console.log("register form submitted: ", email, password);
+    try {
+      await register(email, password);
+      console.log("current user is: ", user);
+    } catch (error) {
+      throw new Error(error);
+    }
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
