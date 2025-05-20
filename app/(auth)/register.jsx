@@ -7,6 +7,7 @@ import { Link } from "expo-router";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import { useUser } from "../../hooks/useUser";
+import { Text } from "react-native";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +25,10 @@ const Register = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
-        <ThemedText title={true}>Register For an Account</ThemedText>
+        {/* <ThemedText title={true}>Register For an Account</ThemedText> */}
+        <Text title={true} style={{ color: "#f2f2f2" }}>
+          Register For an Account
+        </Text>
         <ThemedTextInput
           style={{ marginBottom: 20, width: "80%" }}
           placeholder="Email"

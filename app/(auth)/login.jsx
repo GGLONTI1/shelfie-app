@@ -45,6 +45,7 @@ const Login = () => {
         textStyles={{ fontWeight: "light" }}
       />
       <Spacer height={100} />
+
       <Link href={"/register"}>
         <ThemedText>Register Now</ThemedText>
       </Link>
